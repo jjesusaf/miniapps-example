@@ -6,13 +6,8 @@ import {
 } from "@sherrylinks/sdk";
 import { Metadata } from "@sherrylinks/sdk";
 import { abiPoapRegister } from "../../abi/abiPoapRegister";
-export const corsHeaders = {
-  "Access-Control-Allow-Origin": "*", // permite cualquier dominio
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
-  "Access-Control-Max-Age": "86400",
-  "Content-Type": "application/json",
-};
+import { corsHeaders } from "@/app/api/cors/headers";
+
 const address = "0x3449afc2fCF3D51DC892658f0c69E47286B078d4";
 
 const actions: BlockchainActionMetadata[] = [
@@ -51,6 +46,7 @@ export async function GET() {
       headers: corsHeaders,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: "Failed to create metadata" },
       { status: 500, headers: corsHeaders }

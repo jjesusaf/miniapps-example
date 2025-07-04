@@ -2,15 +2,8 @@
 import { NextResponse } from "next/server";
 import { createMetadata, ValidatedMetadata } from "@sherrylinks/sdk";
 import type { Metadata } from "@sherrylinks/sdk";
+import { corsHeaders } from "@/app/api/cors/headers";
 
-// 🟢 CORS headers globales
-export const corsHeaders = {
-  "Access-Control-Allow-Origin": "*", // permite cualquier dominio
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
-  "Access-Control-Max-Age": "86400",
-  "Content-Type": "application/json",
-};
 
 // 🟢 Metadata para la miniapp Swag Chat
 const miniapp5: Metadata = {
@@ -57,6 +50,7 @@ export async function GET() {
       headers: corsHeaders,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: "Failed to create metadata" },
       { status: 500, headers: corsHeaders }

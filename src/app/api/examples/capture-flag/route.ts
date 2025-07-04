@@ -6,14 +6,8 @@ import {
 } from "@sherrylinks/sdk";
 import { Metadata } from "@sherrylinks/sdk";
 import { abiCapture } from "@/app/api/abi/abiCapture";
-import { NextRequest } from "next/server";
-export const corsHeaders = {
-  "Access-Control-Allow-Origin": "*", 
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
-  "Access-Control-Max-Age": "86400",
-  "Content-Type": "application/json",
-};
+import { corsHeaders } from "@/app/api/cors/headers";
+
 const address = "0xFdC44664A0CcFa8Ed1a63ae6Be9Fb078297C0589";
 
 const actions: BlockchainActionMetadata[] = [
@@ -53,6 +47,7 @@ export async function GET() {
       headers: corsHeaders,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ error: "Failed to create metadata" }, {
       status: 500,
       headers: corsHeaders,

@@ -1,14 +1,8 @@
 import { NextResponse } from "next/server";
 import { createMetadata, ValidatedMetadata } from "@sherrylinks/sdk";
 import { Metadata, TransferAction } from "@sherrylinks/sdk";
-// 🟢 CORS headers globales
-export const corsHeaders = {
-  "Access-Control-Allow-Origin": "*", // permite cualquier dominio
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
-  "Access-Control-Max-Age": "86400",
-  "Content-Type": "application/json",
-};
+import { corsHeaders } from "@/app/api/cors/headers";
+
 const actions: TransferAction[] = [
   {
     label: "Send AVAX fuji",
@@ -112,6 +106,7 @@ export async function GET() {
       headers: corsHeaders,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { error: "Failed to create metadata" },
       {

@@ -5,37 +5,6 @@ import { corsHeaders } from "@/app/api/cors/headers";
 
 const actions: TransferAction[] = [
   {
-    label: "Send AVAX to Celo",
-    chains: { source: 43113, destination: 44787 },
-    type: "transfer",
-    recipient: {
-      label: "Selection with Jesus or Karla",
-      required: true,
-      type: "select",
-      defaultValue: "0x0Cfa7c62dcD0f04CcD2253df371eE035B5ef3a5f",
-      options: [
-        {
-          label: "Jesus Wallet",
-          value: "0x0Cfa7c62dcD0f04CcD2253df371eE035B5ef3a5f",
-        },
-        {
-          label: "Karla Wallet",
-          value: "0x4b01E229bae6745F834726eCA260AD2665606717",
-        },
-      ],
-    },
-    amountConfig: {
-      label: "Amount",
-      required: true,
-      type: "radio",
-      options: [
-        { label: "Small", value: 0.001, description: "0.001 AVAX" },
-        { label: "Medium", value: 0.005, description: "0.005 AVAX" },
-        { label: "Large", value: 0.01, description: "0.01 AVAX" },
-      ],
-    },
-  },
-  {
     label: "Send AVAX fuji",
     chains: { source: 43113 },
     type: "transfer",

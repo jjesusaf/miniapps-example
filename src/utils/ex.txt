@@ -1,0 +1,5 @@
+TRANSFER ACTION
+
+1. si el transfer es receipent no deja poner del tipo radio para renderizar inputs solo del tipo select  y no coincide con los tipos definidos error silencioso
+2. El valor to nunca puede ser vacio y no coincide con los tipos definidos error silencioso
+3. si el valor de amount es vacio siempre sera opcional, si se necesita que sea obligatorio debe de configurarse con un amounconfig el cual es obligatorio dar valores porque el type es obligatorio y solo puede ser select o radio 

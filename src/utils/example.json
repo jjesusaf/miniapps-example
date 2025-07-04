@@ -1,0 +1,29 @@
+{
+    "url": "https://gnpoaqmajzwjdquzhqhk.supabase.co/storage/v1/object/sign/resources/flag.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJyZXNvdXJjZXMvZmxhZy5qcGciLCJpYXQiOjE3MzczMjA4OTYsImV4cCI6NDg1OTM4NDg5Nn0.jW1BTOFDs7dXL6CQysRT9q0rZ3bjElZl3sfcPjd7J5M&t=2025-01-19T21%3A08%3AΩ16.813Z",
+    "icon": "https://i.postimg.cc/k5xWW6rf/wormhole-810x524.jpg",
+    "title": "Capture the flag Cross-Chain",
+    "description": "Be the Best and Capture the Flag",
+    "actions":[
+    {
+      "label": "CAPTURE FOR 0.1",
+      "address": "0x0Cfa7c62dcD0f04CcD2253df371eE035B5ef3a5f",
+      "type": "blockchain",
+      "abi": "abiCapture",
+      "functionName": "captureFlag",
+      "chains": { "source": "fuji", "destination": "alfajores" },
+      "amount": 2,
+      "params": [
+        {
+          "name": "Winner",
+          "label": "Who is the winner?",
+          "required": true,
+          "type": "radio",
+          "options": [
+            { "label": "Jesus Wallet", "value": "0x0Cfa7c62dcD0f04CcD2253df371eE035B5ef3a5f" },
+            { "label": "Karla Wallet", "value": "0x0Cfa7c62dcD0f04CcD2253df371eE035B5ef3a5f" },
+          ],
+        },
+      ],
+    },
+  ]
+}
